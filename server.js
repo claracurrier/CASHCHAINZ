@@ -35,14 +35,10 @@ app.post("/api/incoming-messages", function (req, res){
     console.log(messageBody);
     res.send(200);
     const myRequest = req.body.text;
-	var mytext = "error";
-	if (messageBody=="Check balance"){
-        var mytext = "Your balance is $10";
-	}
     bandwidthAPI.Message.send({
         to: req.body.from,
         from: req.body.to,
-	  text: mytext
+	  text: "Thank you for sending a message to CASHCHAINZ";
 
     })
     .then(function (result){
